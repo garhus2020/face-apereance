@@ -22,8 +22,18 @@ rects = detector(gray, 1)
 cv2_imshow(gray)
 
 import pandas as pd
+df = pd.DataFrame( columns = ['dis', 'dis1','dis2','dis3','dis4','dis5'])
+df.show()
 for (i, rect) in enumerate(rects):
   shape = predictor(gray, rect)
   shape = face_utils.shape_to_np(shape)
   dis=Distance(shape[0],shape[16])
+  dis1=Distance(shape[8],shape[27])
+  dis2=Distance(shape[36],shape[45])
+  dis3=Distance(shape[40],shape[43])
+  dis4=Distance(shape[48],shape[54])
+  dis5=Distance(shape[17],shape[26])
+
+
+
   print(dis)
